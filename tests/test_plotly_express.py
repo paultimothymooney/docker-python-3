@@ -19,8 +19,7 @@ class Test_plotly_express(unittest.TestCase):
         px.choropleth(gapminder, locations="iso_alpha", color="lifeExp", hover_name="country", animation_frame="year",
               color_continuous_scale=px.colors.sequential.Plasma, projection="natural earth")
     def test_violin_plot(self):
-        gapminder = px.data.gapminder()
-        gapminder2007 = gapminder.query("year == 2007")
+        tips = px.data.tips()
         px.scatter(tips, x="total_bill", y="tip", color="smoker", trendline="ols", marginal_x="violin", marginal_y="box")
 
 if __name__ == '__main__':
